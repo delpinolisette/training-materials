@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>8.1. Create DFT Environments &#8212; Medford Group Graduate Training</title>
+    <title>Create DFT Environments &#8212; Medford Group Graduate Training</title>
   
   
   
@@ -156,7 +156,12 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <ul class="current nav bd-sidenav">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">VIP</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="VIP_Info.html">VIP Materials</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Training Materials</span></p>
+<ul class="nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="Basic_Python_Tools.html">1. Introduction to Basic Python Tools</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="Introduction_to_Python_programming.html">1.2. Introduction to Python programming</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Introduction_to_numpy.html">1.3. Numpy -  multidimensional data arrays</a></li>
@@ -200,11 +205,13 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="Exercises_ML_basics_Pt2.html">7.7. Exercises</a></li>
 </ul>
 </li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendix</span></p>
+<ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="Appendix.html">8. Appendix</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">8.1. Create DFT Environments</a></li>
-
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Create DFT Environments</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Gas_formation_energy_calculation_in_SPARC.html">8.3. Gas formation energy calculation using DFT</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Referencing_Binding_Energies.html">8.4. Referencing Binding Energies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Referencing_Binding_Energies.html">Referencing Binding Energies</a></li>
 </ul>
 </li>
 </ul>
@@ -353,18 +360,14 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">8.1. Create DFT Environments</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quantum-espresso-7-0-environment-setup">8.1.1. QUANTUM ESPRESSO 7.0+ Environment Setup</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#knowledge-requirements">8.1.1.1. Knowledge Requirements</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#walk-through">8.1.1.2. Walk-through</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-calculation">8.1.1.3. Example Calculation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quantum-espresso-7-0-environment-setup">QUANTUM ESPRESSO 7.0+ Environment Setup</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#knowledge-requirements">Knowledge Requirements</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#walk-through">Walk-through</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-calculation">Example Calculation</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lrt-compile">LRT Compile</a></li>
 </ul>
-</li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#lrt-compile">8.2. LRT Compile</a></li>
-</ul>
-
             </nav>
         </div>
     </div>
@@ -376,21 +379,21 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="create-dft-environments">
-<h1><span class="section-number">8.1. </span>Create DFT Environments<a class="headerlink" href="#create-dft-environments" title="Permalink to this heading">#</a></h1>
+<h1>Create DFT Environments<a class="headerlink" href="#create-dft-environments" title="Permalink to this heading">#</a></h1>
 <section id="quantum-espresso-7-0-environment-setup">
-<h2><span class="section-number">8.1.1. </span>QUANTUM ESPRESSO 7.0+ Environment Setup<a class="headerlink" href="#quantum-espresso-7-0-environment-setup" title="Permalink to this heading">#</a></h2>
+<h2>QUANTUM ESPRESSO 7.0+ Environment Setup<a class="headerlink" href="#quantum-espresso-7-0-environment-setup" title="Permalink to this heading">#</a></h2>
 <p><em>on PACE</em></p>
 <p><em>by Gabriel S. Gusmão (Mar, 2022)</em></p>
 <p><a class="reference external" href="mailto:gusmaogabriels&#37;&#52;&#48;gmail&#46;com">gusmaogabriels<span>&#64;</span>gmail<span>&#46;</span>com</a>/<a class="reference external" href="mailto:gusmaogabriels&#37;&#52;&#48;gatech&#46;edu">gusmaogabriels<span>&#64;</span>gatech<span>&#46;</span>edu</a></p>
 <section id="knowledge-requirements">
-<h3><span class="section-number">8.1.1.1. </span>Knowledge Requirements<a class="headerlink" href="#knowledge-requirements" title="Permalink to this heading">#</a></h3>
+<h3>Knowledge Requirements<a class="headerlink" href="#knowledge-requirements" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
 <li><p>Fortran Compilers / MPI / Git / PBS (SLURM/TORQ)</p></li>
 </ul>
 <p>To setup you Quantum Espresso (QE) environment you will need the (i) standard <a class="reference external" href="https://wiki.fysik.dtu.dk/ase/">Atomic Simulation Environment - ASE</a> package, (ii) <a class="reference external" href="https://github.com/gusmaogabriels/ase-espresso">ase-espresso</a> with modified classes for QE that enables interactions with live QE sessions through i-PI socket, and, naturally, (iii) <a class="reference external" href="https://github.com/QEF/q-e/releases">Quantum Espresso</a> itself.</p>
 </section>
 <section id="walk-through">
-<h3><span class="section-number">8.1.1.2. </span>Walk-through<a class="headerlink" href="#walk-through" title="Permalink to this heading">#</a></h3>
+<h3>Walk-through<a class="headerlink" href="#walk-through" title="Permalink to this heading">#</a></h3>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Assume `ROOT_DIR` is some shared path to which all users have access. The following file structure is arbitrary, but the environment file should make reference to the correct ones.
 </pre></div>
 </div>
@@ -547,7 +550,7 @@ export PATH=$ROOT_DIR/gits/dev/ase-latest/bin:$PATH
 </section>
 <hr class="docutils" />
 <section id="example-calculation">
-<h3><span class="section-number">8.1.1.3. </span>Example Calculation<a class="headerlink" href="#example-calculation" title="Permalink to this heading">#</a></h3>
+<h3>Example Calculation<a class="headerlink" href="#example-calculation" title="Permalink to this heading">#</a></h3>
 <p><em>on PACE</em></p>
 <ul class="simple">
 <li><p><em><a class="reference external" href="http://run.sh">run.sh</a></em> (bash script to run simulation on PACE HIVE)</p></li>
@@ -645,9 +648,8 @@ print(&#39;Totol time = {} sec&#39;.format(time.time()-t0))
 </div>
 </section>
 </section>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="lrt-compile">
-<h1><span class="section-number">8.2. </span>LRT Compile<a class="headerlink" href="#lrt-compile" title="Permalink to this heading">#</a></h1>
+<section id="lrt-compile">
+<h2>LRT Compile<a class="headerlink" href="#lrt-compile" title="Permalink to this heading">#</a></h2>
 <ol class="arabic simple">
 <li><p>Begin by downloading *.zip files for QE and libxc. Using QE_7.0 and libxc_6.0.0</p></li>
 </ol>
@@ -695,6 +697,7 @@ print(&#39;Totol time = {} sec&#39;.format(time.time()-t0))
 </ul>
 <hr class="docutils" />
 <p>End</p>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -764,18 +767,14 @@ print(&#39;Totol time = {} sec&#39;.format(time.time()-t0))
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">8.1. Create DFT Environments</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quantum-espresso-7-0-environment-setup">8.1.1. QUANTUM ESPRESSO 7.0+ Environment Setup</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#knowledge-requirements">8.1.1.1. Knowledge Requirements</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#walk-through">8.1.1.2. Walk-through</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-calculation">8.1.1.3. Example Calculation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quantum-espresso-7-0-environment-setup">QUANTUM ESPRESSO 7.0+ Environment Setup</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#knowledge-requirements">Knowledge Requirements</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#walk-through">Walk-through</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-calculation">Example Calculation</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lrt-compile">LRT Compile</a></li>
 </ul>
-</li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#lrt-compile">8.2. LRT Compile</a></li>
-</ul>
-
   </nav></div>
 
 </div></div>

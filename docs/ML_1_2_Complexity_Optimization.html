@@ -158,7 +158,12 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <ul class="current nav bd-sidenav">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">VIP</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="VIP_Info.html">VIP Materials</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Training Materials</span></p>
+<ul class="current nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="Basic_Python_Tools.html">1. Introduction to Basic Python Tools</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="Introduction_to_Python_programming.html">1.2. Introduction to Python programming</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Introduction_to_numpy.html">1.3. Numpy -  multidimensional data arrays</a></li>
@@ -202,11 +207,13 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="Exercises_ML_basics_Pt2.html">7.7. Exercises</a></li>
 </ul>
 </li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendix</span></p>
+<ul class="nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="Appendix.html">8. Appendix</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="Create_DFT_Environments.html">8.1. Create DFT Environments</a></li>
-
+<li class="toctree-l2"><a class="reference internal" href="Create_DFT_Environments.html">Create DFT Environments</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Gas_formation_energy_calculation_in_SPARC.html">8.3. Gas formation energy calculation using DFT</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Referencing_Binding_Energies.html">8.4. Referencing Binding Energies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Referencing_Binding_Energies.html">Referencing Binding Energies</a></li>
 </ul>
 </li>
 </ul>
@@ -381,8 +388,7 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <h1>Table of Contents<span class="tocSkip"></span></h1>
-<div class="toc"><ul class="toc-item"><li><span><a href="#Information-Criteria" data-toc-modified-id="Information-Criteria-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>Information Criteria</a></span><ul class="toc-item"><li><span><a href="#Exercise:-Use-the-BIC-to-determine-the-optimum-number-of-evenly-spaced-Gaussians-for-the-spectra" data-toc-modified-id="Exercise:-Use-the-BIC-to-determine-the-optimum-number-of-evenly-spaced-Gaussians-for-the-spectra-1.1"><span class="toc-item-num">1.1&nbsp;&nbsp;</span>Exercise: Use the BIC to determine the optimum number of evenly-spaced Gaussians for the spectra</a></span></li></ul></li><li><span><a href="#Regularization" data-toc-modified-id="Regularization-2"><span class="toc-item-num">2&nbsp;&nbsp;</span>Regularization</a></span><ul class="toc-item"><li><span><a href="#Discussion:-Why-is-the-&quot;smoothness&quot;-of-a-model-related-to-the-size-of-its-parameters?" data-toc-modified-id="Discussion:-Why-is-the-&quot;smoothness&quot;-of-a-model-related-to-the-size-of-its-parameters?-2.1"><span class="toc-item-num">2.1&nbsp;&nbsp;</span>Discussion: Why is the "smoothness" of a model related to the size of its parameters?</a></span></li><li><span><a href="#Discussion:-What-happens-as--$\alpha-\rightarrow$-0-and-$\alpha-\rightarrow$-$\infty$?" data-toc-modified-id="Discussion:-What-happens-as--$\alpha-\rightarrow$-0-and-$\alpha-\rightarrow$-$\infty$?-2.2"><span class="toc-item-num">2.2&nbsp;&nbsp;</span>Discussion: What happens as  $\alpha \rightarrow$ 0 and $\alpha \rightarrow$ $\infty$?</a></span></li><li><span><a href="#Exercise:-Use-cross-validation-to-determine-the-optimal-value-of-$\alpha$-when-$\sigma=20$." data-toc-modified-id="Exercise:-Use-cross-validation-to-determine-the-optimal-value-of-$\alpha$-when-$\sigma=20$.-2.3"><span class="toc-item-num">2.3&nbsp;&nbsp;</span>Exercise: Use cross validation to determine the optimal value of $\alpha$ when $\sigma=20$.</a></span></li></ul></li><li><span><a href="#LASSO-Regularization" data-toc-modified-id="LASSO-Regularization-3"><span class="toc-item-num">3&nbsp;&nbsp;</span>LASSO Regularization</a></span></li><li><span><a href="#Hyperparameter-Tuning" data-toc-modified-id="Hyperparameter-Tuning-4"><span class="toc-item-num">4&nbsp;&nbsp;</span>Hyperparameter Tuning</a></span><ul class="toc-item"><li><span><a href="#Exercise:-Optimize-the-hyperparameters-of-a-LASSO-model-for-the-spectrum-data" data-toc-modified-id="Exercise:-Optimize-the-hyperparameters-of-a-LASSO-model-for-the-spectrum-data-4.1"><span class="toc-item-num">4.1&nbsp;&nbsp;</span>Exercise: Optimize the hyperparameters of a LASSO model for the spectrum data</a></span></li></ul></li></ul></div><div class="cell docutils container">
+  <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>

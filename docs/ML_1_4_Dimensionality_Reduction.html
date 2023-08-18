@@ -158,7 +158,12 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <ul class="current nav bd-sidenav">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">VIP</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="VIP_Info.html">VIP Materials</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Training Materials</span></p>
+<ul class="current nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="Basic_Python_Tools.html">1. Introduction to Basic Python Tools</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="Introduction_to_Python_programming.html">1.2. Introduction to Python programming</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Introduction_to_numpy.html">1.3. Numpy -  multidimensional data arrays</a></li>
@@ -202,11 +207,13 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="Exercises_ML_basics_Pt2.html">7.7. Exercises</a></li>
 </ul>
 </li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendix</span></p>
+<ul class="nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="Appendix.html">8. Appendix</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="Create_DFT_Environments.html">8.1. Create DFT Environments</a></li>
-
+<li class="toctree-l2"><a class="reference internal" href="Create_DFT_Environments.html">Create DFT Environments</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Gas_formation_energy_calculation_in_SPARC.html">8.3. Gas formation energy calculation using DFT</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Referencing_Binding_Energies.html">8.4. Referencing Binding Energies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Referencing_Binding_Energies.html">Referencing Binding Energies</a></li>
 </ul>
 </li>
 </ul>
@@ -393,8 +400,7 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <h1>Table of Contents<span class="tocSkip"></span></h1>
-<div class="toc"><ul class="toc-item"><li><span><a href="#Overview-of-Dimensionality-Reduction" data-toc-modified-id="Overview-of-Dimensionality-Reduction-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>Overview of Dimensionality Reduction</a></span><ul class="toc-item"><li><span><a href="#Practical-uses-of-dimensionality-reduction" data-toc-modified-id="Practical-uses-of-dimensionality-reduction-1.1"><span class="toc-item-num">1.1&nbsp;&nbsp;</span>Practical uses of dimensionality reduction</a></span></li><li><span><a href="#Considerations-for-dimensionality-reduction" data-toc-modified-id="Considerations-for-dimensionality-reduction-1.2"><span class="toc-item-num">1.2&nbsp;&nbsp;</span>Considerations for dimensionality reduction</a></span></li><li><span><a href="#Assessing-performance-of-dimensionality-reduction-models" data-toc-modified-id="Assessing-performance-of-dimensionality-reduction-models-1.3"><span class="toc-item-num">1.3&nbsp;&nbsp;</span>Assessing performance of dimensionality reduction models</a></span><ul class="toc-item"><li><span><a href="#Variance" data-toc-modified-id="Variance-1.3.1"><span class="toc-item-num">1.3.1&nbsp;&nbsp;</span>Variance</a></span></li><li><span><a href="#Distance" data-toc-modified-id="Distance-1.3.2"><span class="toc-item-num">1.3.2&nbsp;&nbsp;</span>Distance</a></span></li><li><span><a href="#Visualization" data-toc-modified-id="Visualization-1.3.3"><span class="toc-item-num">1.3.3&nbsp;&nbsp;</span>Visualization</a></span></li><li><span><a href="#Model-performance" data-toc-modified-id="Model-performance-1.3.4"><span class="toc-item-num">1.3.4&nbsp;&nbsp;</span>Model performance</a></span></li></ul></li></ul></li><li><span><a href="#Principal-Component-Analysis-(PCA)" data-toc-modified-id="Principal-Component-Analysis-(PCA)-2"><span class="toc-item-num">2&nbsp;&nbsp;</span>Principal Component Analysis (PCA)</a></span><ul class="toc-item"><li><span><a href="#Discussion:-How-is-this-different-from-the-correlation-matrix?-Why-are-there-&quot;blocks&quot;-in-matrix?" data-toc-modified-id="Discussion:-How-is-this-different-from-the-correlation-matrix?-Why-are-there-&quot;blocks&quot;-in-matrix?-2.1"><span class="toc-item-num">2.1&nbsp;&nbsp;</span>Discussion: How is this different from the correlation matrix? Why are there "blocks" in matrix?</a></span></li><li><span><a href="#Exercise:-Find-the-rank-of-the-covariance-matrix" data-toc-modified-id="Exercise:-Find-the-rank-of-the-covariance-matrix-2.2"><span class="toc-item-num">2.2&nbsp;&nbsp;</span>Exercise: Find the rank of the covariance matrix</a></span></li><li><span><a href="#Exercise:-Find-the-&quot;average&quot;-10-dimensional-vector-for-an-&quot;8&quot;" data-toc-modified-id="Exercise:-Find-the-&quot;average&quot;-10-dimensional-vector-for-an-&quot;8&quot;-2.3"><span class="toc-item-num">2.3&nbsp;&nbsp;</span>Exercise: Find the "average" 10-dimensional vector for an "8"</a></span></li></ul></li><li><span><a href="#Kernel-PCA" data-toc-modified-id="Kernel-PCA-3"><span class="toc-item-num">3&nbsp;&nbsp;</span>Kernel PCA</a></span><ul class="toc-item"><li><span><a href="#Other-PCA-variants" data-toc-modified-id="Other-PCA-variants-3.1"><span class="toc-item-num">3.1&nbsp;&nbsp;</span>Other PCA variants</a></span></li></ul></li><li><span><a href="#Other-dimensional-reduction-approaches" data-toc-modified-id="Other-dimensional-reduction-approaches-4"><span class="toc-item-num">4&nbsp;&nbsp;</span>Other dimensional reduction approaches</a></span><ul class="toc-item"><li><span><a href="#Manifold-learning" data-toc-modified-id="Manifold-learning-4.1"><span class="toc-item-num">4.1&nbsp;&nbsp;</span>Manifold learning</a></span></li><li><span><a href="#Autoencoding" data-toc-modified-id="Autoencoding-4.2"><span class="toc-item-num">4.2&nbsp;&nbsp;</span>Autoencoding</a></span></li></ul></li></ul></div><div class="cell docutils container">
+  <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
