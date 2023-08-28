@@ -224,6 +224,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="Create_DFT_Environments.html">Create DFT Environments</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Gas_formation_energy_calculation_in_SPARC.html">8.3. Gas formation energy calculation using DFT</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Referencing_Binding_Energies.html">Referencing Binding Energies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Intro_to_EST.html">Introduction to Electronic Structure Theory</a></li>
 </ul>
 </li>
 </ul>
@@ -377,13 +378,9 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#parametric-vs-non-parametric-models">6.2.2.1. Parametric vs. Non-Parametric Models</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-interpolation">6.2.2.2. Linear Interpolation</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#discussion-what-is-in-the-column-space-of-the-matrix-why-do-we-set-fit-intercept-false">6.2.2.3. Discussion: What is in the column space of the matrix? Why do we set <code class="docutils literal notranslate"><span class="pre">fit_intercept=False</span></code>?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-use-every-third-data-point-of-the-spectra-dataset-to-train-a-linear-interpolation-model">6.2.2.4. Exercise: Use every third data point of the spectra dataset to train a linear interpolation model</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kernel-regression">6.2.3. Kernel Regression</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-evaluate-the-performance-of-the-rbf-kernel-as-a-function-of-kernel-width">6.2.3.1. Exercise: Evaluate the performance of the rbf kernel as a function of kernel width</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kernel-regression">6.2.3. Kernel Regression</a></li>
 </ul>
             </nav>
         </div>
@@ -628,11 +625,6 @@ Therefore, there is no need to do the same thing twice.</p>
 </div>
 <p>We see that the model successful at interpolating between the points. This is an example of a <strong>non-parametric</strong> model. The number of parameters, <span class="math notranslate nohighlight">\(\vec{w}\)</span> is equal to the number of data points.</p>
 </section>
-<section id="exercise-use-every-third-data-point-of-the-spectra-dataset-to-train-a-linear-interpolation-model">
-<h3><span class="section-number">6.2.2.4. </span>Exercise: Use every third data point of the spectra dataset to train a linear interpolation model<a class="headerlink" href="#exercise-use-every-third-data-point-of-the-spectra-dataset-to-train-a-linear-interpolation-model" title="Permalink to this heading">#</a></h3>
-<p>First, select every third datapoint from the <code class="docutils literal notranslate"><span class="pre">(x_peak,</span> <span class="pre">y_peak)</span></code> dataset, and use this to train a linear interpolation model. Then, predict the full dataset using the model.</p>
-<p><img alt="image_info" src="docs/images/interpolation.png" /></p>
-</section>
 </section>
 <section id="kernel-regression">
 <h2><span class="section-number">6.2.3. </span>Kernel Regression<a class="headerlink" href="#kernel-regression" title="Permalink to this heading">#</a></h2>
@@ -717,11 +709,6 @@ Therefore, there is no need to do the same thing twice.</p>
 </div>
 </div>
 </div>
-<section id="exercise-evaluate-the-performance-of-the-rbf-kernel-as-a-function-of-kernel-width">
-<h3><span class="section-number">6.2.3.1. </span>Exercise: Evaluate the performance of the rbf kernel as a function of kernel width<a class="headerlink" href="#exercise-evaluate-the-performance-of-the-rbf-kernel-as-a-function-of-kernel-width" title="Permalink to this heading">#</a></h3>
-<p>Use the same strategy as the previous exercise to select every third point in the spectra to use as the training set. Then, vary the width of the radial basis function with <span class="math notranslate nohighlight">\(\sigma = [1, 10, 100]\)</span>, and compute the <span class="math notranslate nohighlight">\(r^2\)</span> score for each <em>using the entire dataset</em>.</p>
-<p>Plot <span class="math notranslate nohighlight">\(r^2\)</span> as a function of <span class="math notranslate nohighlight">\(\sigma\)</span>.</p>
-<p><img alt="image_info" src="docs/images/r2_vs_kernelwidth.png" /></p>
 <p>Let’s also see how the performance of the model changes as we use fewer initial training points:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -767,7 +754,6 @@ r^2 testing = 0.9984890582179191
 </div>
 </div>
 <p>We see that training the model on part of the dataset, and “testing” it on the data it did not see provides a route to determining which values of sigma/gamma yield good results. We will continue exploring this idea in the following lecture.</p>
-</section>
 </section>
 </section>
 
@@ -843,13 +829,9 @@ r^2 testing = 0.9984890582179191
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#parametric-vs-non-parametric-models">6.2.2.1. Parametric vs. Non-Parametric Models</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-interpolation">6.2.2.2. Linear Interpolation</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#discussion-what-is-in-the-column-space-of-the-matrix-why-do-we-set-fit-intercept-false">6.2.2.3. Discussion: What is in the column space of the matrix? Why do we set <code class="docutils literal notranslate"><span class="pre">fit_intercept=False</span></code>?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-use-every-third-data-point-of-the-spectra-dataset-to-train-a-linear-interpolation-model">6.2.2.4. Exercise: Use every third data point of the spectra dataset to train a linear interpolation model</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kernel-regression">6.2.3. Kernel Regression</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-evaluate-the-performance-of-the-rbf-kernel-as-a-function-of-kernel-width">6.2.3.1. Exercise: Evaluate the performance of the rbf kernel as a function of kernel width</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kernel-regression">6.2.3. Kernel Regression</a></li>
 </ul>
   </nav></div>
 

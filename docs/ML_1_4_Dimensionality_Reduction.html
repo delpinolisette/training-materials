@@ -224,6 +224,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="Create_DFT_Environments.html">Create DFT Environments</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Gas_formation_energy_calculation_in_SPARC.html">8.3. Gas formation energy calculation using DFT</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Referencing_Binding_Energies.html">Referencing Binding Energies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Intro_to_EST.html">Introduction to Electronic Structure Theory</a></li>
 </ul>
 </li>
 </ul>
@@ -386,8 +387,8 @@ document.write(`
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#principal-component-analysis-pca">6.5.2. Principal Component Analysis (PCA)</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#discussion-how-is-this-different-from-the-correlation-matrix-why-are-there-blocks-in-matrix">6.5.2.1. Discussion: How is this different from the correlation matrix? Why are there “blocks” in matrix?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-find-the-rank-of-the-covariance-matrix">6.5.2.2. Exercise: Find the rank of the covariance matrix</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-find-the-average-10-dimensional-vector-for-an-8">6.5.2.3. Exercise: Find the “average” 10-dimensional vector for an “8”</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-find-the-rank-of-the-covariance-matrix">6.5.2.2. Example: Find the rank of the covariance matrix</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-find-the-average-10-dimensional-vector-for-an-8">6.5.2.3. Example: Find the “average” 10-dimensional vector for an “8”</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kernel-pca">6.5.3. Kernel PCA</a><ul class="nav section-nav flex-column">
@@ -581,8 +582,8 @@ Digits output shape: (1797,)
 </div>
 <p>We can see that this is clearly not random, but has some patterns associated with digits. This is the vector along which there is the most variance.</p>
 </section>
-<section id="exercise-find-the-rank-of-the-covariance-matrix">
-<h3><span class="section-number">6.5.2.2. </span>Exercise: Find the rank of the covariance matrix<a class="headerlink" href="#exercise-find-the-rank-of-the-covariance-matrix" title="Permalink to this heading">#</a></h3>
+<section id="example-find-the-rank-of-the-covariance-matrix">
+<h3><span class="section-number">6.5.2.2. </span>Example: Find the rank of the covariance matrix<a class="headerlink" href="#example-find-the-rank-of-the-covariance-matrix" title="Permalink to this heading">#</a></h3>
 <p>Hint: Remember the definition of rank in term of eigenvalues.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -799,8 +800,8 @@ Digits output shape: (1797,)
 </div>
 <p>This is an “average” example of a 0 based on the 10-dimensional representation of the digits.</p>
 </section>
-<section id="exercise-find-the-average-10-dimensional-vector-for-an-8">
-<h3><span class="section-number">6.5.2.3. </span>Exercise: Find the “average” 10-dimensional vector for an “8”<a class="headerlink" href="#exercise-find-the-average-10-dimensional-vector-for-an-8" title="Permalink to this heading">#</a></h3>
+<section id="example-find-the-average-10-dimensional-vector-for-an-8">
+<h3><span class="section-number">6.5.2.3. </span>Example: Find the “average” 10-dimensional vector for an “8”<a class="headerlink" href="#example-find-the-average-10-dimensional-vector-for-an-8" title="Permalink to this heading">#</a></h3>
 <p>Use PCA to project the data onto 10 dimensions, then select the points labeled as 8 and take the average.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1036,7 +1037,7 @@ Stress PCA:  0.5405344832395483
 </section>
 <section id="autoencoding">
 <h3><span class="section-number">6.5.4.2. </span>Autoencoding<a class="headerlink" href="#autoencoding" title="Permalink to this heading">#</a></h3>
-<img src="images/autoencoder.png">
+<p><img alt="autoencoder" src="../_images/autoencoder.png" /></p>
 <p>The final approach we will discuss is “autoencoding”, which is the use of neural networks for dimensional reduction. This is a relatively new approach without any implementation in scikit-learn, but it is conceptually different from others so it is included here.</p>
 <p>The idea is that you train a neural network with the same data as inputs and outputs, but use an intermediate hidden layer (or layers) with dimensionality smaller than the original data. This forces the data through a “bottleneck” where it is represented in a low-dimensional form.</p>
 <p>This has numerous advantages:</p>
@@ -1137,8 +1138,8 @@ Stress PCA:  0.5405344832395483
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#principal-component-analysis-pca">6.5.2. Principal Component Analysis (PCA)</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#discussion-how-is-this-different-from-the-correlation-matrix-why-are-there-blocks-in-matrix">6.5.2.1. Discussion: How is this different from the correlation matrix? Why are there “blocks” in matrix?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-find-the-rank-of-the-covariance-matrix">6.5.2.2. Exercise: Find the rank of the covariance matrix</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-find-the-average-10-dimensional-vector-for-an-8">6.5.2.3. Exercise: Find the “average” 10-dimensional vector for an “8”</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-find-the-rank-of-the-covariance-matrix">6.5.2.2. Example: Find the rank of the covariance matrix</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-find-the-average-10-dimensional-vector-for-an-8">6.5.2.3. Example: Find the “average” 10-dimensional vector for an “8”</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kernel-pca">6.5.3. Kernel PCA</a><ul class="nav section-nav flex-column">

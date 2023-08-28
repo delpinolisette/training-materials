@@ -224,6 +224,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="Create_DFT_Environments.html">Create DFT Environments</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Gas_formation_energy_calculation_in_SPARC.html">8.3. Gas formation energy calculation using DFT</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Referencing_Binding_Energies.html">Referencing Binding Energies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Intro_to_EST.html">Introduction to Electronic Structure Theory</a></li>
 </ul>
 </li>
 </ul>
@@ -380,7 +381,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-curse-and-the-blessing-of-dimensionality">6.4.2. The Curse and the Blessing of Dimensionality</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#inspecting-high-dimensional-features">6.4.3. Inspecting High Dimensional Features</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#summary-statistics">6.4.3.1. Summary Statistics</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-compute-the-mean-and-standard-deviation-of-each-feature-in-the-dow-dataset">6.4.3.2. Exercise: Compute the mean and standard deviation of each feature in the Dow dataset.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-compute-the-mean-and-standard-deviation-of-each-feature-in-the-dow-dataset">6.4.3.2. Example: Compute the mean and standard deviation of each feature in the Dow dataset.</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#histogram-plots">6.4.3.3. Histogram Plots</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#discussion-do-these-features-follow-a-normal-distribution">6.4.3.4. Discussion: Do these features follow a normal distribution?</a></li>
 </ul>
@@ -620,8 +621,8 @@ Digits output shape: (1797,)
 </div>
 <p>Here we see that there are some pixels where the maximum is very close to zero. This means these pixels are essentially never used. We will come back to this later.</p>
 </section>
-<section id="exercise-compute-the-mean-and-standard-deviation-of-each-feature-in-the-dow-dataset">
-<h3><span class="section-number">6.4.3.2. </span>Exercise: Compute the mean and standard deviation of each feature in the Dow dataset.<a class="headerlink" href="#exercise-compute-the-mean-and-standard-deviation-of-each-feature-in-the-dow-dataset" title="Permalink to this heading">#</a></h3>
+<section id="example-compute-the-mean-and-standard-deviation-of-each-feature-in-the-dow-dataset">
+<h3><span class="section-number">6.4.3.2. </span>Example: Compute the mean and standard deviation of each feature in the Dow dataset.<a class="headerlink" href="#example-compute-the-mean-and-standard-deviation-of-each-feature-in-the-dow-dataset" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">means</span> <span class="o">=</span> <span class="n">X_dow</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">axis</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span>
@@ -1148,7 +1149,7 @@ Digits output shape: (1797,)
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-curse-and-the-blessing-of-dimensionality">6.4.2. The Curse and the Blessing of Dimensionality</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#inspecting-high-dimensional-features">6.4.3. Inspecting High Dimensional Features</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#summary-statistics">6.4.3.1. Summary Statistics</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-compute-the-mean-and-standard-deviation-of-each-feature-in-the-dow-dataset">6.4.3.2. Exercise: Compute the mean and standard deviation of each feature in the Dow dataset.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-compute-the-mean-and-standard-deviation-of-each-feature-in-the-dow-dataset">6.4.3.2. Example: Compute the mean and standard deviation of each feature in the Dow dataset.</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#histogram-plots">6.4.3.3. Histogram Plots</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#discussion-do-these-features-follow-a-normal-distribution">6.4.3.4. Discussion: Do these features follow a normal distribution?</a></li>
 </ul>

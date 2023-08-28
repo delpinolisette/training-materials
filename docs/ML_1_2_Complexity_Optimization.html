@@ -224,6 +224,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="Create_DFT_Environments.html">Create DFT Environments</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Gas_formation_energy_calculation_in_SPARC.html">8.3. Gas formation energy calculation using DFT</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Referencing_Binding_Energies.html">Referencing Binding Energies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Intro_to_EST.html">Introduction to Electronic Structure Theory</a></li>
 </ul>
 </li>
 </ul>
@@ -372,21 +373,14 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#information-criteria">6.3.1. Information Criteria</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-use-the-bic-to-determine-the-optimum-number-of-evenly-spaced-gaussians-for-the-spectra">6.3.1.1. Exercise: Use the BIC to determine the optimum number of evenly-spaced Gaussians for the spectra</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#information-criteria">6.3.1. Information Criteria</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#regularization">6.3.2. Regularization</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#discussion-why-is-the-smoothness-of-a-model-related-to-the-size-of-its-parameters">6.3.2.1. Discussion: Why is the “smoothness” of a model related to the size of its parameters?</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#discussion-what-happens-as-alpha-rightarrow-0-and-alpha-rightarrow-infty">6.3.2.2. Discussion: What happens as  <span class="math notranslate nohighlight">\(\alpha \rightarrow\)</span> 0 and <span class="math notranslate nohighlight">\(\alpha \rightarrow\)</span> <span class="math notranslate nohighlight">\(\infty\)</span>?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-use-cross-validation-to-determine-the-optimal-value-of-alpha-when-sigma-20">6.3.2.3. Exercise: Use cross validation to determine the optimal value of <span class="math notranslate nohighlight">\(\alpha\)</span> when <span class="math notranslate nohighlight">\(\sigma=20\)</span>.</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lasso-regularization">6.3.3. LASSO Regularization</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hyperparameter-tuning">6.3.4. Hyperparameter Tuning</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-optimize-the-hyperparameters-of-a-lasso-model-for-the-spectrum-data">6.3.4.1. Exercise: Optimize the hyperparameters of a LASSO model for the spectrum data</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hyperparameter-tuning">6.3.4. Hyperparameter Tuning</a></li>
 </ul>
             </nav>
         </div>
@@ -410,9 +404,7 @@ document.write(`
 <section class="tex2jax_ignore mathjax_ignore" id="complexity-optimization">
 <h1><span class="section-number">6.3. </span>Complexity Optimization<a class="headerlink" href="#complexity-optimization" title="Permalink to this heading">#</a></h1>
 <p>The key to machine learning is creating models that generalize to new examples. This means we are looking for models with enough complexity to describe the behavior, but not so much complexity that it just reproduces the data points.</p>
-<center>
-<img src="images/underfitting_overfitting.png" width="800">
-</center>
+<a class="reference internal image-reference" href="../_images/underfitting_overfitting.png"><img alt="../_images/underfitting_overfitting.png" class="align-center" src="../_images/underfitting_overfitting.png" style="width: 800px;" /></a>
 <ul class="simple">
 <li><p>Underfitting: The model is just “guessing” at the data, and will be equally bad at the data it has been trained on and the data that it is tested on.</p></li>
 <li><p>Overfitting: The model has memorized all of the training data, and will be perfect on training data and terrible on testing data.</p></li>
@@ -564,14 +556,10 @@ document.write(`
 </div>
 </div>
 <p>We can see that the BIC correctly predicts that the Gaussian model is preferred.</p>
-<section id="exercise-use-the-bic-to-determine-the-optimum-number-of-evenly-spaced-gaussians-for-the-spectra">
-<h3><span class="section-number">6.3.1.1. </span>Exercise: Use the BIC to determine the optimum number of evenly-spaced Gaussians for the spectra<a class="headerlink" href="#exercise-use-the-bic-to-determine-the-optimum-number-of-evenly-spaced-gaussians-for-the-spectra" title="Permalink to this heading">#</a></h3>
-<p><img alt="image" src="docs/images/BIC.png" /></p>
 <p>There are numerous other “information criteria” that can be used in a similar way. Another common one is the “Aikake information criterion”:</p>
 <p><span class="math notranslate nohighlight">\( AIC = 2\times(\ln{(\sigma^2_e)} + k)\)</span></p>
 <p>This is derived from a slightly different set of statistical assumptions. There are other criteria as well, and you can find them in the statistical literature if needed. However, it can often be very challenging to determine if your dataset fits the assumptions of the criteria, and in practice it is common to just use BIC. However, without knowing the details of the statistical assumptions these are not rigorous and should not be used as a substitute for common sense or intuition. However, the general idea of balancing number of parameters and model error provides a solid framework for thinking about complexity optimization.</p>
 <p>One other challenge with information criteria is that non-parametric models have parameters that are not defined in the same way (the parameters and their values change depending on the training data). This makes it difficult (or impossible) to apply information critera with non-parametric models.</p>
-</section>
 </section>
 <section id="regularization">
 <h2><span class="section-number">6.3.2. </span>Regularization<a class="headerlink" href="#regularization" title="Permalink to this heading">#</a></h2>
@@ -710,10 +698,6 @@ The largest coefficient is 10.984.
 </div>
 </div>
 </section>
-<section id="exercise-use-cross-validation-to-determine-the-optimal-value-of-alpha-when-sigma-20">
-<h3><span class="section-number">6.3.2.3. </span>Exercise: Use cross validation to determine the optimal value of <span class="math notranslate nohighlight">\(\alpha\)</span> when <span class="math notranslate nohighlight">\(\sigma=20\)</span>.<a class="headerlink" href="#exercise-use-cross-validation-to-determine-the-optimal-value-of-alpha-when-sigma-20" title="Permalink to this heading">#</a></h3>
-<p><img alt="image" src="docs/images/optimalAlpha.png" /></p>
-</section>
 </section>
 <section id="lasso-regularization">
 <h2><span class="section-number">6.3.3. </span>LASSO Regularization<a class="headerlink" href="#lasso-regularization" title="Permalink to this heading">#</a></h2>
@@ -738,9 +722,7 @@ The largest coefficient is 10.984.
 <p>This can be compared to the loss function for ridge regression:</p>
 <p><span class="math notranslate nohighlight">\(L_{ridge} = \sum_i \epsilon_i^2 + \alpha ||\vec{w}||_2\)</span></p>
 <p>We will not go through the derivation of <em>why</em> the L1 norm causes parameters to go to zero, but the following schematic, borrowed from <a class="reference external" href="https://niallmartin.wordpress.com/2016/05/12/shrinkage-methods-ridge-and-lasso-regression/">this website</a> may be useful (note that <span class="math notranslate nohighlight">\(\vec{\beta}\)</span> is equivalent to <span class="math notranslate nohighlight">\(\vec{w}\)</span>:</p>
-<center>
-<img src="images/lasso_vs_ridge_regression.png" width="600">
-</center>
+<a class="reference internal image-reference" href="../_images/lasso_vs_ridge_regression.png"><img alt="../_images/lasso_vs_ridge_regression.png" class="align-center" src="../_images/lasso_vs_ridge_regression.png" style="width: 600px;" /></a>
 <p>We can also test it using <code class="docutils literal notranslate"><span class="pre">scikit-learn</span></code>. Unfortunately, we need to create our own feature (basis) matrix, <span class="math notranslate nohighlight">\(X_{ij}\)</span>, similar to linear regression, so we will need a function to evaluate the <code class="docutils literal notranslate"><span class="pre">rbf</span></code>. Instead of using our own, we can use the one from <code class="docutils literal notranslate"><span class="pre">scikit-learn</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -867,11 +849,6 @@ The largest coefficient is 10.984.
 </div>
 <p>This is much faster than doing all the work yourself!</p>
 <p>One note is that the best model will depend on the parameters you search over, as well as the cross-validation strategy. In this case, <code class="docutils literal notranslate"><span class="pre">cv=3</span></code> means that the model performs 3-fold cross-validation at each gridpoint.</p>
-<section id="exercise-optimize-the-hyperparameters-of-a-lasso-model-for-the-spectrum-data">
-<h3><span class="section-number">6.3.4.1. </span>Exercise: Optimize the hyperparameters of a LASSO model for the spectrum data<a class="headerlink" href="#exercise-optimize-the-hyperparameters-of-a-lasso-model-for-the-spectrum-data" title="Permalink to this heading">#</a></h3>
-<p>Search over the same values of <span class="math notranslate nohighlight">\(\alpha\)</span> and <span class="math notranslate nohighlight">\(\sigma\)</span> as for KRR above, and use 3-fold cross validation.</p>
-<p>Note: You will need to use a for loop over the <span class="math notranslate nohighlight">\(\sigma\)</span> values. Use <code class="docutils literal notranslate"><span class="pre">GridSearchCV.best_score_</span></code> as accuracy metric.</p>
-</section>
 </section>
 </section>
 
@@ -942,21 +919,14 @@ The largest coefficient is 10.984.
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#information-criteria">6.3.1. Information Criteria</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-use-the-bic-to-determine-the-optimum-number-of-evenly-spaced-gaussians-for-the-spectra">6.3.1.1. Exercise: Use the BIC to determine the optimum number of evenly-spaced Gaussians for the spectra</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#information-criteria">6.3.1. Information Criteria</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#regularization">6.3.2. Regularization</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#discussion-why-is-the-smoothness-of-a-model-related-to-the-size-of-its-parameters">6.3.2.1. Discussion: Why is the “smoothness” of a model related to the size of its parameters?</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#discussion-what-happens-as-alpha-rightarrow-0-and-alpha-rightarrow-infty">6.3.2.2. Discussion: What happens as  <span class="math notranslate nohighlight">\(\alpha \rightarrow\)</span> 0 and <span class="math notranslate nohighlight">\(\alpha \rightarrow\)</span> <span class="math notranslate nohighlight">\(\infty\)</span>?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-use-cross-validation-to-determine-the-optimal-value-of-alpha-when-sigma-20">6.3.2.3. Exercise: Use cross validation to determine the optimal value of <span class="math notranslate nohighlight">\(\alpha\)</span> when <span class="math notranslate nohighlight">\(\sigma=20\)</span>.</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lasso-regularization">6.3.3. LASSO Regularization</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hyperparameter-tuning">6.3.4. Hyperparameter Tuning</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-optimize-the-hyperparameters-of-a-lasso-model-for-the-spectrum-data">6.3.4.1. Exercise: Optimize the hyperparameters of a LASSO model for the spectrum data</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hyperparameter-tuning">6.3.4. Hyperparameter Tuning</a></li>
 </ul>
   </nav></div>
 
